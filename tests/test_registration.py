@@ -2,6 +2,7 @@ import random
 from locators import TestLocators
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from config import Config
 
 
 class TestRegistration:
@@ -10,7 +11,7 @@ class TestRegistration:
     def test_registration_successfully(self, driver):
         driver.find_element(*TestLocators.BUTTON_ENTER_ACCOUNT).click()
         driver.find_element(*TestLocators.LINK_REGISTRATION).click()
-        driver.find_element(*TestLocators.FIELD_REGISTRATION_NAME).send_keys("Alexey")
+        driver.find_element(*TestLocators.FIELD_REGISTRATION_NAME).send_keys(Config.NAME)
         (driver.find_element(*TestLocators.FIELD_REGISTRATION_EMAIL).
          send_keys(f'alexeylandik{random.randint(100, 999)}@yandex.ru'))
         driver.find_element(*TestLocators.FIELD_REGISTRATION_PASSWORD).send_keys('1234AF')
@@ -23,7 +24,7 @@ class TestRegistration:
     def test_registration_not_correct_password(self, driver):
         driver.find_element(*TestLocators.BUTTON_ENTER_ACCOUNT).click()
         driver.find_element(*TestLocators.LINK_REGISTRATION).click()
-        driver.find_element(*TestLocators.FIELD_REGISTRATION_NAME).send_keys("Alexey")
+        driver.find_element(*TestLocators.FIELD_REGISTRATION_NAME).send_keys(Config.NAME)
         (driver.find_element(*TestLocators.FIELD_REGISTRATION_EMAIL).
          send_keys(f'alexeylandik{random.randint(100, 999)}@yandex.ru'))
         driver.find_element(*TestLocators.FIELD_REGISTRATION_PASSWORD).send_keys('1234')

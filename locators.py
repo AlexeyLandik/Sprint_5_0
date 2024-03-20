@@ -23,4 +23,5 @@ class TestLocators:
     CHAPTER_SOUSES = By.XPATH, ".//*[text()='Соусы']/parent::div[contains(@class,'tab_tab__1SPyG')]"  # вкладка Соусы
     CHAPTER_FILLING = By.XPATH, ".//*[text()='Начинки']/parent::div[contains(@class,'tab_tab__1SPyG')]"  # вкладка
     # Начинки
-    CURRENT_CHAPTER = By.XPATH, ".//div[contains(@class,'current')]/span"    # название текущей вкладки в Конструкторе
+    CURRENT_CHAPTER = By.XPATH, ".//div[contains(@class,'tab_tab_type_current__2BEPc')]"    # название текущей вкладки
+    # в Конструкторе
